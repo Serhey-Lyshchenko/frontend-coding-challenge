@@ -1,0 +1,80 @@
+@import '../variables';
+
+.checkbox {
+  position: relative;
+  height: 15px;
+  width: 15px;
+  border: 2px solid $gray-300;
+  border-radius: 1px;
+
+  svg {
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    top: 1px;
+    left: 1px;
+  }
+
+  &:hover {
+    border-color: $gray-600;
+  }
+}
+
+.input {
+  position: absolute;
+  left: -9999px;
+
+  &:not(:checked) {
+    + {
+      .checkbox {
+        svg {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &:checked {
+    + {
+      .checkbox {
+        border: 2px solid $blue-500;
+        background: $blue-500;
+      }
+    }
+  }
+
+  &:not(:checked):focus {
+    + {
+      .checkbox {
+        border-color: $gray-600;
+      }
+    }
+  }
+
+  &:checked:focus {
+    + {
+      .checkbox {
+        border: 2px solid $blue-500;
+      }
+    }
+  }
+
+  &:checked:disabled {
+    + {
+      .checkbox {
+        border: 2px solid $gray-300;
+        background: $gray-200;
+      }
+    }
+  }
+
+  &:not(:checked):disabled {
+    + {
+      .checkbox {
+        &:hover {
+          border-color: $gray-300;
+        }
+      }
+    }
+  }
+}
