@@ -13,7 +13,7 @@
   position: relative;
   outline: none;
 
-  &.full_width {
+  &.fullWidth {
     width: 100%;
   }
 
@@ -26,7 +26,7 @@
   }
 }
 
-.select_btn {
+.selectBtn {
   border: 0;
   background-color: transparent;
   outline: none;
@@ -108,7 +108,7 @@
   color: #a5b1c4;
 }
 
-.selected_value {
+.selectedValue {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
