@@ -53,6 +53,10 @@ const Checkbox: FC<Props> = forwardRef((props, ref) => {
     [isChecked, onChange],
   );
 
+  React.useEffect(() => {
+    setChecked(!!defaultValue);
+  }, [defaultValue]);
+
   return (
     <Label title={label || ''} disabled={disabled} position='right'>
       <input

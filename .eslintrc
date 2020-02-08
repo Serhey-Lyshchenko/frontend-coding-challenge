@@ -44,7 +44,7 @@
     "jsx-a11y/label-has-associated-control": [ 2, {
       "labelComponents": ["Label"],
       "labelAttributes": ["title"],
-      "controlComponents": ["Input", "Checkbox", "FancyCheckbox", "Toggle"],
+      "controlComponents": ["Input", "Checkbox", "FancyCheckbox", "Toggle", "Select"],
       "depth": 3
     }],
     "object-curly-newline": [2, { "multiline": true }],

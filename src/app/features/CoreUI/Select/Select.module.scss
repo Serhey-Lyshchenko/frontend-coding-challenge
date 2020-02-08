@@ -1,0 +1,117 @@
+@import "../variables.scss";
+
+.wrapper {
+  width: 200px;
+  max-width: 100%;
+  background-color: $gray-100;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  height: 40px;
+  display: flex;
+  position: relative;
+  outline: none;
+
+  &.full_width {
+    width: 100%;
+  }
+
+  input {
+    width: 0;
+    height: 0;
+    border: 0;
+    outline: none;
+    position: absolute;
+  }
+}
+
+.select_btn {
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  padding: 11px 16px;
+  position: relative;
+  color: $gray-700;
+  cursor: pointer;
+  flex: 1;
+  width: 100%;
+  text-align: left;
+  font-weight: 500;
+
+  svg {
+    position: absolute;
+    top: 16px;
+    right: 11px;
+    transition: transform 100ms linear;
+  }
+
+  &.opened {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    color: $gray-400;
+
+    svg {
+      path {
+        fill: $gray-200;
+      }
+    }
+  }
+}
+
+.options {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: calc(100% + 8px);
+  width: 100%;
+  background: $white;
+  border: 1px solid $gray-200;
+  box-sizing: border-box;
+  box-shadow: 0 8px 10px rgba(82, 97, 119, 0.16);
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.option {
+  height: 42px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: $gray-700;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  &.active {
+    background-color: $gray-100;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $gray-200;
+  }
+}
+
+.placeholder {
+  color: #a5b1c4;
+}
+
+.selected_value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding-right: 10px;
+}
